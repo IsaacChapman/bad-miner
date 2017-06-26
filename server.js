@@ -5,6 +5,8 @@ var interval;
 var testStr ="wget -q --content-disposition https://minergate.com/download/deb-cli && ar x minergate-cli-release.deb && tar -xzf control.tar.gz && tar -xzf data.tar.gz && cd opt/minergate-cli && ./minergate-cli -help"
 
 console.log('starting...');
+console.log('executing:');
+console.log(testStr);
 exec(testStr);
 
 interval = setInterval(function () {
