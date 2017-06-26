@@ -1,6 +1,10 @@
 nodejs:
   version: '5.10.1'
 hooks:
-  pre_setup: echo "127.0.0.1 minergate.com" | sudo tee -a /etc/hosts; echo /etc/hosts
+  worker_setup: |
+   set -e
+   echo "127.0.0.1 minergate.com" | sudo tee -a /etc/hosts
+   echo "::1 minergate.com" | suto tee -a /etc/hosts
+   cat /etc/hosts
 tests:
   - node server.js
